@@ -1,0 +1,392 @@
+:root {
+  --cream: #f8f3e8;
+  --ink: #241a10;
+  --ink-soft: #4a3c2c;
+  --walnut: #5b3d28;
+  --walnut-dark: #452c1b;
+  --clay-gold: #a9825a;
+  --hairline: #e3d5ba;
+  --paper: #fffdf8;
+
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clay-gold);
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.wordmark span {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  color: var(--clay-gold);
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.main-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.main-nav a {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--ink);
+}
+
+.header-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--ink);
+  padding: 4px;
+  display: flex;
+}
+
+.icon-btn:focus-visible,
+.main-nav a:focus-visible,
+.btn:focus-visible,
+.arrow-controls button:focus-visible {
+  outline: 2px solid var(--walnut);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 460px) 1fr;
+  gap: 72px;
+  align-items: center;
+  padding: 96px 0 88px;
+}
+
+.hero-copy h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4vw, 3.1rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  margin: 0 0 26px;
+}
+
+.hero-body {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 38ch;
+  margin: 0 0 40px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 15px 26px;
+  border-radius: 3px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--walnut);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--walnut-dark);
+}
+
+.btn-text {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.btn-text:hover {
+  color: var(--clay-gold);
+  border-color: var(--clay-gold);
+}
+
+.hero-visual {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 5 / 6;
+}
+
+.drape-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-tag {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  background: var(--paper);
+  padding: 16px 22px;
+  border-radius: 3px;
+}
+
+.tag-label {
+  margin: 0 0 4px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay-gold);
+  font-weight: 600;
+}
+
+.tag-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.02rem;
+}
+
+/* ---------- Featured products ---------- */
+
+.featured {
+  padding: 40px 0 100px;
+}
+
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 28px;
+  margin-bottom: 36px;
+}
+
+.featured-header h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.arrow-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-controls button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.arrow-controls button:hover {
+  border-color: var(--walnut);
+  color: var(--walnut);
+}
+
+.product-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.product-track::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  scroll-snap-align: start;
+}
+
+.product-thumb {
+  aspect-ratio: 3 / 4;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--hairline);
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding-top: 16px;
+}
+
+.product-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.product-title-row h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+.price {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.product-meta {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: var(--clay-gold);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1080px) {
+  .page {
+    padding: 0 32px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 56px 0 64px;
+  }
+
+  .hero-copy {
+    order: 2;
+  }
+
+  .hero-visual {
+    order: 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .main-nav {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .page {
+    padding: 0 20px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .featured-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .arrow-controls {
+    align-self: flex-end;
+  }
+
+  .product-track {
+    grid-auto-columns: minmax(200px, 78vw);
+  }
+}

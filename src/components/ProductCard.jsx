@@ -1,0 +1,26 @@
+export default function ProductCard({ product }) {
+  const { name, meta, price,  image } = product
+  // const [from, to] = swatch
+
+  return (
+    <article className="product-card">
+      <div
+        className="product-thumb"
+        style={
+          !image
+            ? { background: `linear-gradient(155deg, ${from}, ${to})` }
+            : undefined
+        }
+      >
+        {image && <img src={image} alt={name} />}
+      </div>
+      <div className="product-info">
+        <div className="product-title-row">
+          <h3>{name}</h3>
+          <span className="price">{price}</span>
+        </div>
+        <p className="product-meta">{meta}</p>
+      </div>
+    </article>
+  )
+}
