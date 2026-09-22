@@ -303,7 +303,13 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.product-card:hover .product-thumb-img {
+  transform: scale(1.06);
+}
+ 
 
 .product-info {
   padding-top: 16px;
@@ -388,5 +394,309 @@ img {
 
   .product-track {
     grid-auto-columns: minmax(200px, 78vw);
+  }
+}
+
+
+
+
+
+/* Design tokens the footer relies on. If you're already importing the
+   main App.css elsewhere in your project, skip this block — just make
+   sure these variables and the .wordmark / .btn / .btn-primary classes
+   exist somewhere in scope. */
+/* :root {
+  --ink: #241a10;
+  --ink-soft: #4a3c2c;
+  --walnut: #5b3d28;
+  --walnut-dark: #452c1b;
+  --clay-gold: #a9825a;
+  --hairline: #e3d5ba;
+  --paper: #fffdf8;
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.wordmark span {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  color: var(--clay-gold);
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 15px 26px;
+  border-radius: 3px;
+  border: none;
+  font-family: var(--font-sans);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--walnut);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--walnut-dark);
+} */
+
+
+
+
+/* ------- Brand Story -------*/
+
+
+.brand-story {
+  display: grid;
+  grid-template-columns: minmax(280px, 460px) 1fr;
+  gap: 72px;
+  align-items: center;
+  padding: 20px 0 100px;
+  font-family: var(--font-sans);
+}
+ 
+.story-visual {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--hairline);
+}
+ 
+.story-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.story-visual-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(155deg, #efe2c2, #c9ac78);
+}
+ 
+.story-copy h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+ 
+.story-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 20px;
+}
+ 
+.story-copy .btn-text {
+  margin-top: 6px;
+}
+ 
+/* ---------- Responsive ---------- */
+ 
+@media (max-width: 1080px) {
+  .brand-story {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 8px 0 72px;
+  }
+ 
+  .story-visual {
+    aspect-ratio: 16 / 10;
+  }
+}
+ 
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 40px;
+  padding: 72px 0 0;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-sans);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  padding-bottom: 56px;
+}
+
+.footer-brand .wordmark {
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.footer-blurb {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 32ch;
+  margin: 0 0 20px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-socials a:hover {
+  border-color: var(--walnut);
+  color: var(--walnut);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.footer-heading {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clay-gold);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.footer-col a {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--ink);
+}
+
+.footer-newsletter .footer-blurb {
+  max-width: 30ch;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+}
+
+.newsletter-form input:focus-visible {
+  outline: 2px solid var(--walnut);
+  outline-offset: 2px;
+}
+
+.newsletter-form input::placeholder {
+  color: #9c8b71;
+}
+
+.newsletter-form .btn {
+  padding: 12px 20px;
+  white-space: nowrap;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal a:hover {
+  color: var(--ink);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1080px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: auto;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form .btn {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
