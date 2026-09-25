@@ -1,0 +1,107 @@
+/* Tokens this stylesheet relies on. Skip this block if you're already
+   importing the main App.css elsewhere. */
+:root {
+  --ink: #241a10;
+  --ink-soft: #4a3c2c;
+  --clay-gold: #a9825a;
+  --hairline: #e3d5ba;
+  --paper: #fffdf8;
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clay-gold);
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.section-header.centered {
+  text-align: center;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header.centered .eyebrow {
+  display: block;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials {
+  padding: 10px 0 100px;
+  font-family: var(--font-sans);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-card {
+  margin: 0;
+  padding: 32px 28px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  color: var(--clay-gold);
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.testimonial-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.testimonial-location {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1080px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
