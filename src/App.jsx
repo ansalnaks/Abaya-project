@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx'
 import FeaturedProducts from './components/FeaturedProducts.jsx'
 import Footer from './components/Footer.jsx'
 import BrandStory from './components/BrandStory.jsx'
+import ShopByType from './components/ShopByType.jsx'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Hero />
         <FeaturedProducts />
         <BrandStory/>
+        <ShopByType/>
       </main>
       <Footer/>
     </div>

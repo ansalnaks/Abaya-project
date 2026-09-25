@@ -7,7 +7,7 @@ export default function Header() {
 
       <nav className="main-nav" aria-label="Main">
         <a href="/new-arrivals">New Arrivals</a>
-        <a href="/abayas">Abayas</a>
+        <a href="/hero">Abayas</a>
         <a href="/types">Types</a>
         <a href="/journal">Journal</a>
       </nav>
